@@ -22,6 +22,7 @@ class FooClientTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
+        // Start the guzzle test server.
         Server::start();
         register_shutdown_function(function(){Server::stop();});
 

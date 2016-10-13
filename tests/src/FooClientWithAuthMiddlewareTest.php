@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Tests\Server;
 
 /**
- * @coversDefaultClass \FooApi\RestClient\FooClient
+ * @coversDefaultClass \FooApi\RestClient\FooClientWithAuthMiddleware
  */
 class FooClientWithAuthMiddlewareTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,8 +22,7 @@ class FooClientWithAuthMiddlewareTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        // Load and start the guzzle test server.
-        require_once __DIR__ . '/../../vendor/guzzlehttp/guzzle/tests/Server.php';
+        // Start the guzzle test server.
         Server::start();
         register_shutdown_function(function(){Server::stop();});
 
