@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false"
+         bootstrap="./vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="Test suite for Foo">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <server name="FOO_BASE" value="https://example.com" />
+        <server name="FOO_USER" value="Foo" />
+        <server name="FOO_PASS" value="Bar" />
+    </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>

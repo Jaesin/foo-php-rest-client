@@ -1,0 +1,36 @@
+{
+  "name": "foo-api/foo-php-rest-client",
+  "type": "library",
+  "description": "Provides an API consumer for the Foo ReST API.",
+  "keywords": ["REST","PHP"],
+  "license": "MIT",
+  "homepage": "https://example.com",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://github.com/foo-api/foo-php-rest-client/isues",
+    "source": "https://github.com/foo-api/foo-php-rest-client"
+  },
+  "autoload": {
+    "psr-4": {
+      "FooApi\\RestClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "GuzzleHttp\\Tests\\": "./vendor/guzzlehttp/guzzle/tests/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle-services": "dev-guzzle6-pr1",
+    "php": ">=5.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Konafets/guzzle-services.git"
+    }
+  ]
+}

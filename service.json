@@ -1,0 +1,85 @@
+{
+  "name": "Foo",
+  "apiVersion": "2012-10-14",
+  "baseUrl": "http://api.foo.com",
+  "description": "Foo is an API that allows you to Baz Bar",
+  "operations": {
+    "GetFoo": {
+      "httpMethod": "GET",
+      "uri": "/foo",
+      "summary": "Gets foo",
+      "responseModel": "FooResponse"
+    },
+    "CreateFoo": {
+      "httpMethod": "POST",
+      "uri": "/foo",
+      "summary": "Creates new foo",
+      "responseModel": "FooResponse",
+      "parameters": {
+        "name": {
+          "location": "json",
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "location": "json",
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "models": {
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "string",
+          "required": true
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "The error code."
+              },
+              "message": {
+                "type": "string",
+                "description": "The detailed message from the server."
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": {
+        "location": "json"
+      }
+    },
+    "FooResponse": {
+      "type": "object",
+      "extends": "BaseResponse",
+      "properties": {
+        "Foo": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "name": {
+              "type": "string",
+              "required": true
+            },
+            "description": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
